@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
         num_with_c = num_items / coupon_hash[:num]
         num_after = num_items % coupon_hash[:num]
           if num_with_c > 0
-            cart[item][:count] = new_remaining_qty_after_coupon_applied
+            cart[item][:count] = num_after
             cart["#{item} W/COUPON"] = {
             :price=> coupon_hash[:cost],
             :clearance=> cart[item][:clearance],
