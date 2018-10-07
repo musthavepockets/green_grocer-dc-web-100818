@@ -57,7 +57,7 @@ def checkout(cart, coupons)
   #binding.pry
   cost_array = final_cart.collect do |name,info|
     info[:price] * info[:count]
-      
+   end 
       total_cost = cost_array.each do |p|
         total_cost += p
   binding.pry
