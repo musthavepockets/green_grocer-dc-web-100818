@@ -53,7 +53,7 @@ def checkout(cart, coupons)
   #binding.pry
   cart.each do |items|
     binding.pry
-    updated_cart = consolidate_cart(items)
+    updated_cart = consolidate_cart(cart: items)
     binding.pry
     cart_w_coupons = apply_coupons(updated_cart, coupons)
     final_cart = apply_clearance(cart_w_coupons)
