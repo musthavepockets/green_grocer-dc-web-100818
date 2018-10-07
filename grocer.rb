@@ -29,7 +29,8 @@ def apply_coupons(cart, coupons)
       updated_cart[item_name] = item_info
        
       #binding.pry
-        if updated_cart.include?(coupon[:item]) && coupon[:num] <= updated_cart[item_name][:count]
+        if updated_cart.include?(coupon[:item])
+          #&& coupon[:num] <= updated_cart[item_name][:count]
           #binding.pry
           quantity = updated_cart[coupon[:item]][:count] / coupon[:num]
           multi_quanity = updated_cart[coupon[:item]][:count] % coupon[:num]
