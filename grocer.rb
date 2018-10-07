@@ -51,10 +51,10 @@ end
 def checkout(cart:[cart], coupons:[coupons])
   total_cost = 0
   updated_cart = consolidate_cart(cart)
-  cart_w_coupons = apply_coupons(cart: [updated_cart], coupons)
-  final_cart = apply_clearance(cart:[cart_w_coupons])
+  cart_w_coupons = apply_coupons(cart: updated_cart, coupons)
+  final_cart = apply_clearance(cart: cart_w_coupons)
   final_cart.collect do |name,info|
-    total_cost = info[:price] * info[:count]
+    cost_array = info[:price] * info[:count]
   binding.pry
     
     if total_cost > 100
