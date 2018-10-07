@@ -51,7 +51,7 @@ end
 def checkout(cart:, coupons:)
   total_cost = 0
   updated_cart = consolidate_cart(cart)
-  cart_w_coupons = apply_coupons(updated_cart, coupons:)
+  cart_w_coupons = apply_coupons(updated_cart, coupons)
   final_cart = apply_clearance(cart: cart_w_coupons)
   final_cart.collect do |name,info|
     cost_array = info[:price] * info[:count]
