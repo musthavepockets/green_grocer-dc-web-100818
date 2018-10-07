@@ -32,7 +32,7 @@ def apply_coupons(cart, coupons)
             cart["#{item} W/COUPON"] = {
             :price => coupon_hash[:cost],
             :clearance => cart[item][:clearance],
-            :count => coupon_qty }
+            :count => num_with_c }
           end
         end
       end
