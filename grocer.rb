@@ -43,7 +43,7 @@ def apply_coupons(cart, coupons)
           #elsif 
             #updated_cart[coupon[:item]][:count] /= coupon[:num]
             #updated_cart["#{coupon[:item]} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => quantity}
-            updated_cart[item_name][:count] = multi_quanity 
+            #updated_cart[item_name][:count] = multi_quanity 
           #else 
             #!coupon || !coupon.values.include?(item_name)
           #updated_cart
