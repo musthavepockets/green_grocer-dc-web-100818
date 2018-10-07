@@ -21,38 +21,22 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons) 
-  updated_cart = {}
-  #item = coupon[:item]
-  cart.each do |item_name, item_info|
-    coupons.each do |coupon|
-      updated_cart["#{item_name} W/COUPON"] = {}
-      updated_cart[item_name] = item_info
-       
-      #binding.pry
-        if updated_cart.include?(coupon[:item])
-          #binding.pry
-          quantity = updated_cart[coupon[:item]][:count] / coupon[:num]
-          multi_quanity = updated_cart[coupon[:item]][:count] % coupon[:num]
-          if quantity > 0
-            updated_cart[:item][:count] = multi_quanity
-            updated_cart["#{item_name} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => 1}
-            #updated_cart["#{coupon[:item]} W/COUPON"][:count]
-            #updated_cart["#{coupon[:item]} W/COUPON"][:count] += 1
-            
-        #binding.pry
-          #elsif 
-            #updated_cart[coupon[:item]][:count] /= coupon[:num]
-            #updated_cart["#{coupon[:item]} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => quantity}
-            #updated_cart[item_name][:count] = multi_quanity 
-          #else 
-            #!coupon || !coupon.values.include?(item_name)
-          #updated_cart
-            
+  coupons.each do |coupon_hash|
+    item = coupon_hash[:item] # save the coupon hash {:item=>"AVACADO, :num=>2, :const=>5.0}"}
+      if cart.has_key?(item)
+        origional_qty = cart[item][:count]
+        coupon_qty = origional_qty / coupon_hash[:num] # this is the applied coupon qty
+        new_remaining_qty_after_coupon_applied = origional_qty % coupon_hash[:num]
+          if coupon_qty > 0
+            cart[item][:count] = new_remaining_qty_after_coupon_applied
+            cart["#{item} W/COUPON"] = {
+            :price=> coupon_hash[:cost],
+            :clearance=> cart[item][:clearance],
+            :count=> coupon_qty }
+          end
         end
       end
-    end
-  end
-  updated_cart
+    cart
   binding.pry
 end
 
