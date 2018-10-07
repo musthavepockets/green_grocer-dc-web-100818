@@ -55,7 +55,7 @@ def checkout(cart, coupons)
   cart_w_coupons = apply_coupons(updated_cart, coupons)
   final_cart = apply_clearance(cart_w_coupons)
   #binding.pry
-  cost_array = final_cart.collect do |name,info|
+  cost_array = updated_cart.collect do |name,info|
     info[:price] * info[:count]
    end 
   total_cost = cost_array.each do |p|
