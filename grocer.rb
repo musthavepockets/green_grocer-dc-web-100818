@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
           quantity = updated_cart[coupon[:item]][:count] / coupon[:num]
           multi_quanity = updated_cart[coupon[:item]][:count] % coupon[:num]
           if quantity > 0
-            
+            updated_cart[:item][:count] = 
             updated_cart["#{item_name} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => 1}
             #updated_cart["#{coupon[:item]} W/COUPON"][:count]
             #updated_cart["#{coupon[:item]} W/COUPON"][:count] += 1
