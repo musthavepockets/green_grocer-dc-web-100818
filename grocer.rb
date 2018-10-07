@@ -30,9 +30,9 @@ def apply_coupons(cart, coupons)
           if num_with_c > 0
             cart[item][:count] = num_after
             cart["#{item} W/COUPON"] = {
-            :price=> coupon_hash[:cost],
-            :clearance=> cart[item][:clearance],
-            :count=> coupon_qty }
+            :price => coupon_hash[:cost],
+            :clearance => cart[item][:clearance],
+            :count => coupon_qty }
           end
         end
       end
