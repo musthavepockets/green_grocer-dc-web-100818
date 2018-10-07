@@ -33,8 +33,8 @@ def apply_coupons(cart, coupons)
           #binding.pry
           quantity = updated_cart[coupon[:item]][:count] / coupon[:num]
           multi_quanity = updated_cart[coupon[:item]][:count] % coupon[:num]
-          if 
-            
+          if coupon
+            updated_cart["#{item_name} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => 1}
             #updated_cart["#{coupon[:item]} W/COUPON"][:count]
             #updated_cart["#{coupon[:item]} W/COUPON"][:count] += 1
             
@@ -43,9 +43,9 @@ def apply_coupons(cart, coupons)
             #updated_cart[coupon[:item]][:count] /= coupon[:num]
             #updated_cart["#{coupon[:item]} W/COUPON"] = {:price => coupon[:cost], :clearance => cart[item_name][:clearance], :count => quantity}
             updated_cart[item_name][:count] = multi_quanity 
-          else 
-            !coupon || !coupon.values.include?(item_name)
-          updated_cart
+          #else 
+            #!coupon || !coupon.values.include?(item_name)
+          #updated_cart
             
         end
       end
