@@ -25,8 +25,8 @@ def apply_coupons(cart, coupons)
     item = coupon[:item]
       if cart.has_key?(item)
         num_items = cart[item][:count]
-        num_with_c = num_items / coupon_hash[:num]
-        num_after = num_items % coupon_hash[:num]
+        num_with_c = num_items / coupon[:num]
+        num_after = num_items % coupon[:num]
           if num_with_c > 0
             cart[item][:count] = num_after
             cart["#{item} W/COUPON"] = {
