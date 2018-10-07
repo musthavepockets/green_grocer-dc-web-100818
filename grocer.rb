@@ -59,7 +59,7 @@ def checkout(cart: [], coupons: [])
     info[:price] * info[:count]
       
       total_cost = cost_array.each do |p|
-        p + p
+        total_cost += p
   binding.pry
     
       if total_cost > 100
