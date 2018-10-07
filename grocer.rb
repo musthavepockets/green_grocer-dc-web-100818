@@ -24,7 +24,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item = coupon[:item]
       if cart.has_key?(item)
-        origional_qty = cart[item][:count]
+        num_items = cart[item][:count]
         coupon_qty = origional_qty / coupon_hash[:num] # this is the applied coupon qty
         new_remaining_qty_after_coupon_applied = origional_qty % coupon_hash[:num]
           if coupon_qty > 0
