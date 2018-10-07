@@ -59,12 +59,10 @@ def checkout(cart, coupons)
     total_cost += info[:price] * info[:count]
    end 
   
-  #binding.pry
     
       if total_cost > 100
         total_cost *= 0.9
       
-    
   end
   total_cost
   #binding.pry
