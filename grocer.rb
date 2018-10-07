@@ -60,6 +60,7 @@ def checkout(cart, coupons)
    end 
       total_cost = cost_array.each do |p|
         total_cost += p
+      end
   binding.pry
     
       if total_cost > 100
