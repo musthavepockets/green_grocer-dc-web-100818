@@ -57,12 +57,10 @@ def checkout(cart, coupons)
   final_cart.each do |name,info|
     total_cost += info[:price] * info[:count]
    end 
-  
     
-      if total_cost > 100
-        total_cost *= 0.9
+    if total_cost > 100
+      total_cost *= 0.9
       
   end
   total_cost
-  #binding.pry
 end
