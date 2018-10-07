@@ -48,7 +48,7 @@ def apply_clearance(cart)
   cart
 end
 
-def checkout(cart, coupons: [])
+def checkout(cart, coupons)
   total_cost = 0
   binding.pry
     updated_cart = consolidate_cart(cart)
