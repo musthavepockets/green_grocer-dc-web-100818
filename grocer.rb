@@ -21,8 +21,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons) 
-  coupons.each do |coupon_hash|
-    item = coupon_hash[:item] # save the coupon hash {:item=>"AVACADO, :num=>2, :const=>5.0}"}
+  coupons.each do |coupon|
+    item = coupon[:item]
       if cart.has_key?(item)
         origional_qty = cart[item][:count]
         coupon_qty = origional_qty / coupon_hash[:num] # this is the applied coupon qty
