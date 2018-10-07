@@ -61,7 +61,7 @@ def checkout(cart, coupons)
   total_cost = cost_array.each do |p|
     total_cost += p
   end
-  binding.pry
+  #binding.pry
     
       if total_cost > 100
         total_cost *= 0.9
@@ -69,5 +69,5 @@ def checkout(cart, coupons)
     
   end
   total_cost
-  binding.pry
+  #binding.pry
 end
