@@ -53,9 +53,10 @@ def checkout(cart, coupons)
   updated_cart = consolidate_cart(cart)
   apply_coupons(updated_cart, coupons)
   apply_clearance(updated_cart)
+  binding.pry
   updated_cart.each do |name,info|
     total_cost = updated_cart[info][:price] * updated_cart[info][:count]
-    binding.pry
+    
     if total_cost > 100
       total_cost *= 0.9
     end
